@@ -1,551 +1,134 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#607d8b">
-    <meta name="robots" content="index,follow">
-    <meta name="description" content="An all-in-one bot designed for creating dynamic and adaptable communities.">
-    <meta name="twitter:card" content="player cards">
-    <meta name="twitter:site" content="https://kyos.pro/commands/#antinuke">
-    <meta property="og:description" content="An all-in-one bot designed for creating dynamic and adaptable communities.">
-    <meta property="og:image" content="convict.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="500">
-    <meta property="og:image:height" content="500">
-    <meta property="og:locale" content="en">
-    <meta property="og:site_name" content="convict">
-    <meta property="og:title" content="convict - commands">
-    <meta property="og:url" content="https://kyos.pro/commands/#antinuke">
-    <link rel="canonical" href="https://kyos.pro/commands/#antinuke">
-    <link rel="shortcut icon" href="convict.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="stylesheet" href="https://convict.pro/commands/commandstyle.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/79e1ff99f6.js" crossorigin="anonymous"></script>
-    <title>convict - commands</title>
-    <style>
-        #loader {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #0a0a0a;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            display: flex;
-            opacity: 1;
-            transition: opacity 0.5s ease-out;
-        }
+<meta property="og:type" content="website">
+<meta property="og:title" content="killa" />
+<meta property="og:description" content="killa" />
+<meta property="og:url" content="killa.github.io" />
+
+<style type="text/css">* {cursor: url(https://cur.cursors-4u.net/others/oth-8/oth704.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2005/10/27/hol40.html" target="_blank" title="Bloody Knife"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Bloody Knife" style="position:absolute; top: 0px; right: 0px;" /></a>
+<section id="site" class="noselect">
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>killa</title>
+    </head>
     
-        .bot-icon {
-            width: 150px;
-            height: 150px;
-            animation: flash 3s infinite alternate; 
-        }
+    <div class="fade-in-text">
+    <center><div>
+        <pre><h1>
+killa</h1>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣤⣤⣤⣤⣤⣤⣤⣤⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣖⣾⣯⣽⣿⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣶⣶⣶⣾⣿⣭⣽⣿⣓⣶⣦⣤⣄⣀⡀⣀⣀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠛⠛⠛⠛⠛⠻⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣿⣿⣿⡿⠟⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠛⠻⠿⡿⠋⠉⠉⠻⣿⣿⣿⣿⣿⣿⡿⠃
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⡏⠙⠻⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⣾⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⡏⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⣴⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⣾⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⡇⠀⠀⠀⠀⠀⠀
+⠀⢠⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⠁⠀⠀⠀⠀⠀⠀
+⢀⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣤⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⡻⣿⣿⣶⣶⣦⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⡿⠛⠻⢿⣿⣿⣿⣿⣿⣿⣷⡜⢿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⣾⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠏⠀⠀⠀⠀⠙⢿⣿⣷⡝⣿⣿⣿⣎⢻⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⢠⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀⠀⠀⠀⣀⡼⢿⣿⣿⣎⢿⣿⣿⣦⠻⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⣸⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⡏⢁⡀⠀⢀⣀⣀⣀⣀⢻⣿⣿⣎⢿⣿⣿⣧⡹⣿⣿⣿⣿⡄⠀⠀⠀⠀⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣼⣧⠀⠸⣿⣿⣿⣿⡏⣿⣿⣿⣎⢿⣿⣿⣷⡙⣿⣿⣿⣿⡀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡇⢰⣄⠀⠉⠛⠛⠉⠀⣿⣿⣿⣿⡎⢿⣿⣿⣷⡘⣿⣿⣿⡇⠀⠀⣾⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣦⡘⠻⠗⠀⠐⠢⣄⣀⣾⣿⣿⣿⣿⡌⣿⣿⣿⣷⡘⣿⣿⣷⠀⢀⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⢀⢀⢀⢀⢀⢈⢻⣿⣿⣿⣿⣿⣷⡘⣿⣿⣿⣷⡹⣿⣿⠀⢸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣖⠔⠩⠎⠲⠉⢁⣿⣿⣿⣿⣿⣿⣧⢹⣿⣿⣿⣧⢻⣿⡄⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⠀⢀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣇⢿⣿⣿⣿⣇⣿⣷⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡸⣿⣿⣿⣿⣼⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⢿⣿⣿⣿⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠼⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⡏⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠻⠿⠿⠇⣿⣿⣿⢹⣿⣿⡿⠟⠋⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀          
+    </pre>
+    <pre>
+convicted
+Salmon
+
+    </pre>
+    </div></center>
+    </div>
     
-        @keyframes flash {
-            0% { opacity: 1; }
-            100% { opacity: 0; }
-        }
     
-        .button-assets {
-            font-size: 18px; 
-            margin-right: 10px; 
-        }
-        
-        .button-featured {
-            font-size: 24px; 
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var loader = document.getElementById('loader');
-            if (loader) {
-                setTimeout(function() {
-                    loader.style.opacity = '0';
-                    setTimeout(function() {
-                        loader.style.display = 'none';
-                    }, 500);
-                }, 1000);
-            }
-        
-            var searchIcon = document.getElementById('searchIcon');
-            var searchInput = document.getElementById('searchInput');
-        
-            searchIcon.addEventListener('click', function() {
-                const searchWrapper = this.parentElement;
-                searchWrapper.classList.toggle('search-expanded');
-        
-                if (searchWrapper.classList.contains('search-expanded')) {
-                    searchInput.focus();
-                }
-            });
-        });
-        </script>
-    
-</head>
-<body>
-<div id="loader">
-    <img src="convict.png" class="bot-icon" alt="Loading...">
-</div>
-<div id="desktop-content">
-    <header class="header-container">
-        <div class="header-center">
-            <a href="https://kyos.pro/commands/" class="button">Commands</a>
-            <a href="https://discord.com/oauth2/authorize?client_id=1278843657545449554&permissions=8&integration_type=0&scope=bot" class="button">Invite</a>
-            <a href="https://discord.gg/Rx3FfA5w" target="_blank" class="button">Discord</a>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+            ✞
         </div>
-    <div class="header-right">
-        <div class="search-wrapper"></div>
-            <i class="fas fa-search search-icon" id="searchIcon"></i>
-            <input type="text" id="searchInput" class="search-input" placeholder="Search for a command...">
+        <div class="snowflake">
+            ✞
+        </div>
+        <div class="snowflake">
+            ✞
+        </div>
+        <div class="snowflake">
+            ✞
+        </div>
+        <div class="snowflake">
+            ✞
+        </div>
+        <div class="snowflake">
+            ✞
+        </div>
+        <div class="snowflake">
+            ✞
+        </div>
+        <div class="snowflake">
+            ✞
+        </div>
+        <div class="snowflake">
+            ✞
+        </div>
+        <div class="snowflake">
+            ✞
+        </div>
+        <div class="snowflake">
+            ✞
+        </div>
+        <class="snowflake">
+            ✞
         </div>
     </div>
-</header>
-<div class="text-header" style="display: flex; justify-content: center;">
-    <h1 style="color: #a3a0a0; text-align: center; display: flex; align-items: center; font-weight: 500;">
-        <span style="background-color: #161717; font-size: 0.4em; padding: 13px; color: #9eb4ba; height: 1.0em; width: 0.9em; margin-top: 0px; margin-bottom: 0px; margin-right: 10px; border: 1px solid #9a9a9a; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
-            <i class="fa-solid fa-terminal"></i>
-        </span>
-        Commands
-    </h1>
-</div>
+</section>
 
+<center><button id="button" style="color:white; font-family:'Courier New', Courier, monospace; border: none;background: none;" onclick="playAudio();document.getElementById('button').hidden=true;document.getElementById('site').hidden=false"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>enter killa group</button></center>
 
-
-<div class="container">
-<!-- antinuke start -->
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Antinuke protection commands</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">an, automod</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">subcommand</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke admin</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Add/remove someone's antinuke admin permissions</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Server Owner</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">member</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke admins</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">View the current antinuke admins</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Server Owner</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke permissions</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Prevent dangerous permissions being given</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">dp, perms</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke ban</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Prevent rogue moderators mass banning</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">massban, banning, mb</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke kick</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Prevent rogue moderators mass kicking</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">kicking, masskick, kck</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke botadd</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Enables/disables unwhitelisted bots being added</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke deleterole</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Configure the role deletion trigger</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">roledeletion, roledelete, rd</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke createrole</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Configure the role creation trigger</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">rolecreation, rolecreated, rc</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke channelcreation</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Configure the channel creations trigger</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">crchannels, cc, ch</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke channeldeletion</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Configure the channel deletions trigger</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">delchannels, dc</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke webhook</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Prevents webhooks being spammed in your server</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">webhooks, webh, whp</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke vanity</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Punish those changing your server's vanity</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke mention</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Prevents mass pinging</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">mm, massmention</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke server</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Prevent malicious changes being made to the server</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">svr, serverprotection</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">status, parameters</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke on</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Enable the antinuke</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">enable, turnon, true</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke off</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Disables the antinuke</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">disable</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke whitelist</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Exempts a user from antinuke action</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">whit, bypass, wl</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">user</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke unwhitelist</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Removes a user from the antinuke whitelist</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">uwl, unwl, unwhl</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">user</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke whitelisted</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">View the current antinuke whitelisted users</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke status</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">View the current antinuke configuration</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">settings, cfg, config</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke log</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Set the antinuke logging channel</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">logger, logging</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">channel</span></div>
-<br>
-</div>
-<div class="column" data-category="antinuke" style="border: 1px solid #1e2121c6;">
-<div style="color: #fff; font-size: 1.25rem; font-family: Manrope, sans-serif; font-weight: 600; padding: 20px 0px 0px 20px;">antinuke removelogs</div>
-<div style="color: #a3a3a3; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 10px 10px 10px 20px;">Disable antinuke logging</div>
-<hr>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; color: #a3a3a3;"> Aliases</span><span style="text-align: left; color: #a3a3a3;"><i class="fa-sharp-duotone fa-solid fa-triangle-exclamation" style="color: #a3a3a3"></i> Permissions</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;">
-<span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">removelog, rlog</span><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">Antinuke Admin</span>
-</div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; color: #a3a3a3;"><i class="fa-duotone fa-solid fa-gear" style="color: #a3a3a3"></i> Arguments</span></div>
-<div style="display: flex; justify-content: space-between; color: #fff; font-size: 0.875rem; font-family: Manrope, sans-serif; font-weight: 500; padding: 5px 20px 5px 20px;"><span style="text-align: left; background-color: #1f1f20; padding: 7.5px; border-radius: 10px;">None</span></div>
-<br>
-</div>
-    
-
-
-</div>
-
-</div>
-</div>
-    <script>document.addEventListener('DOMContentLoaded', function() {
-        var scrollContainer = document.getElementById('scrollContainer');
-        var scrollLeftButton = document.getElementById('scrollLeftButton');
-        var scrollRightButton = document.getElementById('scrollRightButton');
-        
-        function scrollContainerBy(amount) {
-            scrollContainer.scrollBy({
-                left: amount,
-                behavior: 'smooth'
-            });
-        }
-
-        scrollLeftButton.addEventListener('click', function() {
-            scrollContainerBy(-250);
-        });
-
-        scrollRightButton.addEventListener('click', function() {
-            scrollContainerBy(250);
-        });
-
-        function getCategoryFromHash() {
-            var hash = window.location.hash.substring(1);
-            return hash ? hash : 'all';
-        }
-
-        var selectedCategory = getCategoryFromHash();
-
-        function filterCommands() {
-            var commands = document.querySelectorAll('.container .column');
-            commands.forEach(function(command) {
-                var category = command.getAttribute('data-category');
-                if (selectedCategory === 'all' || category === selectedCategory) {
-                    command.style.display = 'block';
-                } else {
-                    command.style.display = 'none';
-                }
-            });
-        }
-
-        var categoryItems = document.querySelectorAll('.category-item');
-        categoryItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                var category = this.getAttribute('data-category');
-                document.querySelectorAll('.category-item').forEach(function(el) {
-                    el.classList.remove('selected');
-                });
-                this.classList.add('selected');
-                selectedCategory = category;
-                filterCommands();
-                window.location.hash = category;
-            });
-        });
-
-        document.getElementById('searchInput').addEventListener('input', function() {
-            var query = this.value.toLowerCase();
-            var commands = document.querySelectorAll('.container .column');
-            commands.forEach(function(command) {
-                var name = command.querySelector('div').textContent.toLowerCase();
-                if (name.includes(query)) {
-                    command.style.display = 'block';
-                } else {
-                    command.style.display = 'none';
-                }
-            });
-        });
-        filterCommands();
-
-        document.querySelectorAll('.category-item').forEach(function(item) {
-            if (item.getAttribute('data-category') === selectedCategory) {
-                item.classList.add('selected');
-            }
-        });
-    });</script>
-    <script>document.addEventListener('DOMContentLoaded', function() {
-        var preloader = document.getElementById('preloader');
-        preloader.style.opacity = '0';
-        preloader.style.transition = 'opacity 0.5s ease';
-        setTimeout(function() {
-            preloader.style.display = 'none';
-        }, 500);
-    });</script>
-
-<div class="footer-line" bis_skin_checked="1"></div>
-<div class="footer-container">
-    <footer>
-        <div style="text-align: left; margin-bottom: 10px;">
-            <a>Copyright © 2024 • convict</a>
-        </div>
-        <div style="text-align: right; margin-bottom: 10px;">
-            <a href="https://docs.convict.pro/legal/tos" style="color: rgba(255,255,255,1); text-decoration: none; margin-left: 5px; margin-right: 5px;" onmouseover="this.style.color='rgba(255,255,255,0.75)';" onmouseout="this.style.color='rgba(255,255,255,1)';">Terms of Service</a>
-            <a style="color: rgba(255,255,255,1); text-decoration: none;" onmouseover="this.style.color='rgba(255,255,255,0.75)';" onmouseout="this.style.color='rgba(255,255,255,1)';">•</a>
-            <a href="https://docs.convict.pro/legal/privacypolicy" style="color: rgba(255,255,255,1); text-decoration: none; margin-left: 5px; margin-right: 5px;" onmouseover="this.style.color='rgba(255,255,255,0.75)';" onmouseout="this.style.color='rgba(255,255,255,1)';">Privacy Policy</a>
-            <a style="color: rgba(255,255,255,1); text-decoration: none;" onmouseover="this.style.color='rgba(255,255,255,0.75)';" onmouseout="this.style.color='rgba(255,255,255,1)';">•</a>
-            <a href="https://docs.convict.pro/legal/refundpolicy" style="color: rgba(255,255,255,1); text-decoration: none; margin-left: 5px; margin-right: 5px;" onmouseover="this.style.color='rgba(255,255,255,0.75)';" onmouseout="this.style.color='rgba(255,255,255,1)';">Refund Policy</a>
-        </div>
-    </footer>
-</div>
-</body>
-</html>
+<script>
+  document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+      return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+      return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+      return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+      return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+      return false;
+  }
+  }
+  document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  });
+  document.getElementById('site').hidden=true
+  function playAudio() {
+      myAudio = new Audio('song.mp3'); 
+      if (typeof myAudio.loop == 'boolean')
+      {
+          myAudio.loop = true;
+      }
+      else
+      {
+          myAudio.addEventListener('ended', function() {
+              this.currentTime = 0;
+              this.play();
+          }, false);
+      }
+      myAudio.play();
+  }
+</script>
