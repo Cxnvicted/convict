@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#729bb0">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="An all-in-one bot designed for creating dynamic and adaptable communities.">
+    <meta name="twitter:card" content="player cards">
+    <meta name="twitter:site" content="./">
+    <meta property="og:description" content="An all-in-one bot designed for creating dynamic and adaptable communities.">
+    <meta property="og:image" content="./cdn/kyos.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="og:locale" content="en">
+    <meta property="og:site_name" content="kyos">
+    <meta property="og:title" content="kyos">
+    <meta property="og:url" content="./">
+    <link rel="canonical" href="./">
+    <link rel="shortcut icon" href="../cdn/kyos.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/79e1ff99f6.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <title>kyos</title>
+    <style>
+        #loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0a0a0a;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            display: flex;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+    
+        .bot-icon {
+            width: 150px; 
+            height: 150px;
+            animation: flash 3s infinite alternate;
+        }
+    
+        @keyframes flash {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .container-featured {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            gap: 20px; 
+        }
+        .column {
+            flex: 1 1 calc(33% - 20px); 
+            display: flex;
+            align-items: center;
+            min-width: 250px; 
+        }
+        .column img {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            margin-right: 10px;
+        }
+        .column div {
+            max-width: calc(100% - 100px);
+        }
+        .column h2 {
+            color: #729cb0;
+            font-family: Manrope, sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 0 0 10px 0;
+        }
+        .column p {
+            color: #a1a1a1;
+            font-family: Manrope, sans-serif;
+            font-size: 14px;
+            margin: 0;
+        }
+        .button-assets {
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        .button-featured {
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            .column {
+                flex: 1 1 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                min-width: 100%;
+                margin: 5px 0;
+            }
+            .column img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        .count {
+            font-family: Manrope, sans-serif;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function animateNumber(element, start, end, duration) {
+            let startTimestamp = null;
+            function step(timestamp) {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            }
+            window.requestAnimationFrame(step);
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            const usersCount = document.getElementById('users-count');
+            const serversCount = document.getElementById('servers-count');
+            const highlight_statistic = document.getElementById('highlight-statistic');
+        
+            var loader = document.getElementById('loader');
+            if (loader) {
+                setTimeout(function() {
+                    loader.style.opacity = '0';
+                    setTimeout(function() {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 1000); 
+            }
+            var columns = document.querySelectorAll('.column');
+            columns.forEach(function(column) {
+                column.classList.add('fade-in-up');
+            });
+            var featuredContainers = document.querySelectorAll('.container-featured');
+            function checkVisibility() {
+                var triggerBottom = window.innerHeight * 0.8;
+    
+                featuredContainers.forEach(function(container) {
+                    var boxTop = container.getBoundingClientRect().top;
+    
+                    if (boxTop < triggerBottom) {
+                        container.classList.add('visible');
+                    }
+                });
+            }
+            animateNumber(usersCount, 0, 150804, 3000); 
+            animateNumber(serversCount, 0, 1435, 3000); 
+            animateNumber(highlight_statistic, 0, 150000, 3000); 
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
+            function createStar() {
+                const heroSection = document.querySelector('.bckgrnd');
+                const star = document.createElement('div');
+                star.classList.add('star');
+
+                // Random size for the stars
+                const size = Math.random() * 20 + 10 + 'px'; // Smaller size for star effect
+                star.style.width = size;
+                star.style.height = size;
+
+                // Random position
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.left = Math.random() * 100 + 'vw';
+
+                heroSection.appendChild(star);
+
+                setTimeout(() => {
+                    star.remove();
+                }, 20000);
+            }
+
+            for (let i = 0; i < 5; i++) {
+                createStar();
+            }
+
+            setInterval(createStar, 4000);
+                    });
+    </script>
+    
+</head>
+<body>
+<div id="desktop-content">
+    <header class="header-container">
+        <div class="header-center">
+            <a href="./commands/" class="button">Commands</a>
+            <a href="./invite/" class="button">Invite</a>
+            <a href="https://discord.gg/kyos" target="_blank" class="button">Discord</a>
+            <a href="./premium/" target="_blank" class="button"><span style="color: #ffd700;"> Premium</span></a>
+        </div>
+    </header>
+    <div class="bckgrnd">
+        <div class="container fade-in-upp">
+            <div class="row">
+                <div class="col text-left">
+                    <a class="gradient-text" style="text-align: left">
+                        <span class="highlight-statistic2">kyos,</span> the one for all. For 
+                        <span class="highlight-statistic2"> free.</span>
+                    </a>
+                    <p class="description" style="font-family: Manrope, sans-serif; color: #cacaca; text-align: left; font-size: 18px; margin-top: 10px; margin-bottom: 5px;">
+                        Designed to enhance your community's experience, simplify server management, and grant access to premium resources for all your needs.
+                    </p>
+                    
+                </div>
+            </div>
+            <div class="row" style="justify-content: flex-start; margin-top: 20px; margin-bottom: 30px;">
+                <div class="col text-left">
+                    <a href='./invite/' class="contactButton">
+                        <i class="fa-brands fa-discord" style="margin-right: 6px;"></i>Add to Discord 
+                        <div class="iconButton">
+                          <svg
+                            height="24"
+                            width="24"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                              d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                              fill="currentColor"
+                            ></path>
+                          </svg>
+                
+                        </div>
+                    </a>
+                </div>
+                <div class="col text-left">
+                    <a href='./premium/' class="contactButton2">
+                        Premium
+                        <div class="iconButton2">
+                          <svg
+                            height="24"
+                            width="24"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                              d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                              fill="currentColor"
+                            ></path>
+                          </svg>
+                
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-featured-top fade-in-up" style="width: 85%;">
+    <div class="column-top" style="display: flex; flex-direction: column; align-items: center">
+        <div class="top-text" style="text-align: center">
+            <h1 style="font-size: 42px; color: #ffffff; margin: 0;" class="fade-in-up">What are you waiting for?</h1>
+            <p style="font-size: 18px; color: #a1a1a1; margin: 5px 0;" class="fade-in-up">
+                Join <span class="highlight-statistic fade-in-up">150k+</span> users using Kyos everyday!
+            </p>
+        </div>
+        
+        <div class="star-panel fade-in-up" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+            <i class="fas fa-star" style="color: #ffd700; font-size: 27px; margin-right: 5px;"></i>
+            <i class="fas fa-star" style="color: #ffd700; font-size: 27px; margin-right: 5px;"></i>
+            <i class="fas fa-star" style="color: #ffd700; font-size: 27px; margin-right: 5px;"></i>
+            <i class="fas fa-star" style="color: #ffd700; font-size: 27px; margin-right: 5px;"></i>
+            <i class="fa-regular fa-star" style="color: #ffd700; font-size: 27px;"></i>
+
+            <span style="color: #ffffff; font-size: 20px; margin-left: 15px;" class="fade-in-up">on <a href="https://top.gg/bot/1065596802235109426" class="highlight-statistic fade-in-up"> Top.gg</a></span>
+        </div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;" class="fade-in-up">
+            <div class="column-box fade-in-up" style="flex: 1; margin-right: 10px;">
+                <div style="display: flex; justify-content: left; align-items: center;">
+                    <a style="width: auto; height: 50px; font-size: 28px; font-weight: 490; margin-left: 0px;" href="./premium" class="button-featured fade-in-up"><i class="fa-solid fa-star" style="color: #729cb0;"></i>‎ Premium</a>
+                </div>
+                <div style="color: #a1a1a1; font-family: Manrope, sans-serif; font-size: 18px; text-align: left; margin-bottom: 5px; margin-top: 0px;">Want some extra perks or wish to support kyos' development? Click me!</div>
+            </div>
+            
+            <div class="column-box fade-in-up" style="flex: 1; margin-right: 10px;">
+                <div style="display: flex; justify-content: left; align-items: center;">
+                    <a style="width: auto; height: 50px; font-size: 28px; font-weight: 490; margin-left: 0px;" href="https://discord.com/oauth2/authorize?client_id=1065596802235109426&permissions=1615377856726&integration_type=0&scope=applications.commands+bot" class="button-featured fade-in-up"><i class="fa-solid fa-key" style="color: #729cb0;"></i>‎ Invite</a>
+                </div>
+                <div style="color: #a1a1a1; font-family: Manrope, sans-serif; font-size: 18px; text-align: left; margin-bottom: 5px; margin-top: 0px;">Wish to use kyos in your community? Invite us here!</div>
+            </div>
+
+            <div class="column-box fade-in-up" style="flex: 1; margin-right: 10px;">
+                <div style="display: flex; justify-content: left; align-items: center;">
+                    <a style="width: auto; height: 50px; font-size: 28px; font-weight: 490; margin-left: 0px;" href="https://docs.kyos.pro/" target="_blank" class="button-featured fade-in-up"><i class="fa-solid fa-book" style="color: #729cb0;"></i>‎ Documentation</a>
+                </div>
+                <div style="color: #a1a1a1; font-family: Manrope, sans-serif; font-size: 18px; text-align: left; margin-bottom: 5px; margin-top: 0px;">Confused on how to setup a module? Everything is here.</div>
+            </div>
+
+            <div class="column-box fade-in-up" style="flex: 1;">
+                <div style="display: flex; justify-content: left; align-items: center;">
+                    <a style="width: auto; height: 50px; font-size: 28px; font-weight: 490; margin-left: 0px;" href="./team/" class="button-featured fade-in-up"><i class="fa-solid fa-layer-group" style="color: #729cb0;"></i>‎ Team</a>
+                </div>
+                <div style="color: #a1a1a1; font-family: Manrope, sans-serif; font-size: 18px; text-align: left; margin-bottom: 5px; margin-top: 0px;">Interested in who's behind kyos? Our team can be found here.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="margin-bottom: 20px;"></div>
+<div class="testimonial-slider-container">
+    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 100px;"></div>
+    <div class="top-text" style="text-align: center">
+        <h1 style="font-size: 42px; color: #ffffff; margin: 0;">See what our users have to say.</h1>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 100px;"></div>
+    
+    <div class="testimonial-slider">
+        <div class="testimonial-slide">
+            <div class="testimonial-avatar">
+                <img src="https://cdn.discordapp.com/avatars/186022282882318336/fcfeb5bb59bce57c7acb6079cdd33753.png?size=1024" alt="NiceGuyKc">
+            </div>
+            <p class="testimonial-content">"Kyos offers some fun features and more detailed logs. I speak for all of us lazy slobs when I say that I really appreciate that I can config everything without having to leave Discord lmao."</p>
+            <h4 class="testimonial-author">— NiceGuyKc, Server Owner</h4>
+        </div>
+        
+        <div class="testimonial-slide">
+            <div class="testimonial-avatar">
+                <img src="https://cdn.discordapp.com/avatars/1144806731269034054/e55cc2bc22680742c9bda8269f0e53b3.png?size=1024" alt="surge">
+            </div>
+            <p class="testimonial-content">"Pretty neat bot! Multi-purpose with some cool features usually only for premium locked bots, 100% recommend."</p>
+            <h4 class="testimonial-author">— surge, Server Manager</h4>
+        </div>
+
+        <div class="testimonial-slide">
+            <div class="testimonial-avatar">
+                <img src="https://images.discordapp.net/avatars/1213954195821035631/a10ab07eec90cc1a5c49c812d7ec2356.png?size=512" alt="Ory">
+            </div>
+            <p class="testimonial-content">"Saved my server from a couple of attempted nukes, definitely a good addition to any server. Has most things you will need, quite customizable too. 9/10!"</p>
+            <h4 class="testimonial-author">— Ory, Server Owner</h4>
+        </div>
+
+        <div class="testimonial-slide">
+            <div class="testimonial-avatar">
+                <img src="https://images.discordapp.net/avatars/1033243595270004818/eda96d9802ba9c560eea5554a828f06e.png?size=512" alt="poik">
+            </div>
+            <p class="testimonial-content">"Great for any community, +++ for giving the features they do free. Kudos to the owner/devs."</p>
+            <h4 class="testimonial-author">— poik, User</h4>
+        </div>
+    </div>
+</div>
+
+<div style="margin-bottom: 20px;"></div>
+
+<div id="mobile-content">
+<header class="header-container">
+    <div class="header-right">
+        <a href="https//discord.gg/kyos" target="_blank" class="button-discord"><i class="fa-brands fa-discord" style="margin-right: 10px;"></i>Discord</a>
+    </div>
+</header>
+<div class="bckgrnd" bis_skin_checked="1">
+    <div class="container" bis_skin_checked="1">
+        <div class="row" bis_skin_checked="1">
+            <div class="col text-center" bis_skin_checked="1">
+                <h1 style="font-family: Manrope, sans-serif; font-weight: 800; color: #5b64e8; text-align: center; margin-bottom: 10px;">kyos</h1>
+            </div>
+        </div>
+        <p class="description" style="font-family: Manrope, sans-serif; color: #cacaca; text-align: center; font-size: 18px; margin-top: 10px; margin-bottom: 5px;">serving <span style="color: #fff;">131,181</span> users across <span style="color: #fff;">1,243</span> servers</p>
+        <div class="col text-center">
+            <a href="https://docs.kyos.pro/" target="_blank" class="button-assets" style="width: 160px;"><i class="fa-solid fa-book" style="color: #729cb0;"></i>‎ ‎ Documentation</a>
+        </div>
+        <div class="col text-center">
+            <a href="https://discord.com/oauth2/authorize?client_id=1065596802235109426&permissions=1615377856726&integration_type=0&scope=applications.commands+bot" class="button-assets" style="width: 160px;"><i class="fa-solid fa-key" style="color: #729cb0;"></i>‎ ‎ Invite</a>
+        </div>
+        <div class="col text-center">
+            <a href="https://discord.gg/kyos" target="_blank" class="button-assets" style="width: 160px;"><i class="fa-brands fa-discord" style="color: #729cb0;"></i>‎ ‎ Discord</a>
+        </div>
+        <br>
+        <div class="col text-center">
+            <a href="https://docs.kyos.pro/premium" target="_blank" class="button-assets" style="width: 160px;"><i class="fa-duotone fa-solid fa-star" style="color: #729cb0;"></i>‎ ‎ Premium</a>
+        </div>
+    </div>
+</div>
+<div style="margin-bottom: 20px;"></div>
+</div>
+<script>window.onload = function() {
+        updateContentVisibility();
+    };
+    window.onresize = function() {
+        updateContentVisibility();
+    };
+    function updateContentVisibility() {
+        if (window.innerWidth < 900) {
+            setContentVisibility("desktop-content", "none");
+            setContentVisibility("mobile-content", "block");
+        } else {
+            setContentVisibility("desktop-content", "block");
+            setContentVisibility("mobile-content", "none");
+        }
+    }
+    function setContentVisibility(elementId, displayStyle) {
+        document.getElementById(elementId).style.display = displayStyle;
+    }</script>
+<div class="footer-line" bis_skin_checked="1"></div>
+<div class="footer-container">
+    <footer>
+        <div style="text-align: left; margin-bottom: 10px;">
+            <a>Copyright © 2024 • kyos</a>
+        </div>
+        <div style="text-align: right; margin-bottom: 10px;">
+            <a href="https://docs.kyos.pro/legal/tos" style="color: rgba(255,255,255,1); text-decoration: none; margin-left: 5px; margin-right: 5px;" onmouseover="this.style.color='rgba(255,255,255,0.75)';" onmouseout="this.style.color='rgba(255,255,255,1)';">Terms of Service</a>
+            <a style="color: rgba(255,255,255,1); text-decoration: none;" onmouseover="this.style.color='rgba(255,255,255,0.75)';" onmouseout="this.style.color='rgba(255,255,255,1)';">•</a>
+            <a href="https://docs.kyos.pro/legal/privacypolicy" style="color: rgba(255,255,255,1); text-decoration: none; margin-left: 5px; margin-right: 5px;" onmouseover="this.style.color='rgba(255,255,255,0.75)';" onmouseout="this.style.color='rgba(255,255,255,1)';">Privacy Policy</a>
+            <a style="color: rgba(255,255,255,1); text-decoration: none;" onmouseover="this.style.color='rgba(255,255,255,0.75)';" onmouseout="this.style.color='rgba(255,255,255,1)';">•</a>
+            <a href="https://docs.kyos.pro/legal/refundpolicy" style="color: rgba(255,255,255,1); text-decoration: none; margin-left: 5px; margin-right: 5px;" onmouseover="this.style.color='rgba(255,255,255,0.75)';" onmouseout="this.style.color='rgba(255,255,255,1)';">Refund Policy</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
